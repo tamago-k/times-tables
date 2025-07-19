@@ -10,3 +10,6 @@ WORKDIR /var/www
 COPY . /var/www
 
 RUN composer install --no-dev --optimize-autoloader
+
+# サーバー起動（Render 用）
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=${PORT:-8000}"]
