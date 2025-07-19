@@ -16,7 +16,7 @@ export default function Home() {
 
   const fetchQuestion = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/multiplication`);
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/multiplication`);
       if (!res.ok) throw new Error('Failed to fetch');
       const data: Question = await res.json();
       setQuestion(data);
