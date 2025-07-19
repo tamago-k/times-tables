@@ -221,7 +221,8 @@ export default function Home() {
           読み込み中...
         </p>
       )}
-      <div>
+      {question && (
+        <div>
           {result === 'wrong' && (
             <p
               style={{
@@ -232,12 +233,15 @@ export default function Home() {
                 whiteSpace: 'pre-wrap',
               }}
             >
+              
               不正解😢 答え: {question.answer}
               <br />
               覚え方: {question.mnemonic ?? '覚え方はありません'}
             </p>
           )}
       </div>
+      )}
+      
     </main>
   );
 }
